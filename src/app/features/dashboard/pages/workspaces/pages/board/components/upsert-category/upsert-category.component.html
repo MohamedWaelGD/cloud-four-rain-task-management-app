@@ -1,0 +1,25 @@
+<form
+  [formGroup]="formGroup"
+  (ngSubmit)="onSubmit()"
+  class="flex flex-col gap-2"
+>
+  <div class="flex flex-col gap-1">
+    <label for="name">Category name</label>
+    <input
+      id="name"
+      pInputText
+      formControlName="name"
+      type="text"
+      class="input"
+      placeholder="Enter category name"
+    />
+    <app-error-form-text
+      [formControlInp]="formGroup.controls.name"
+      errorKey="required"
+      errorMessage="The name field is required"
+    ></app-error-form-text>
+  </div>
+  <div class="flex justify-end">
+      <p-button label="Save" type="submit" [loading]="loading()" />
+  </div>
+</form>

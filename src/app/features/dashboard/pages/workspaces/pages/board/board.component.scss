@@ -1,0 +1,19 @@
+.bg-background {
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.bg-background-black {
+    background-color: black;
+    opacity: 0.25;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}

@@ -1,0 +1,105 @@
+<div>
+  <h3 class="text-3xl font-bold text-center">Create an Account!</h3>
+  <p class="text-center text-gray-500">Please register to your account</p>
+  <form [formGroup]="formGroup" (ngSubmit)="onRegister()">
+    <div class="flex flex-col gap-1">
+      <div class="flex flex-col gap-1">
+        <label for="displayName" class="text-sm font-medium">Full Name</label>
+        <input
+          pInputText
+          id="displayName"
+          type="displayName"
+          formControlName="displayName"
+          class="input"
+          placeholder="Enter your full name"
+        />
+        <app-error-form-text
+          [formControlInp]="formGroup.controls.displayName"
+          errorKey="required"
+          errorMessage="DisplayName field is required"
+        ></app-error-form-text>
+        <app-error-form-text
+          [formControlInp]="formGroup.controls.displayName"
+          errorKey="displayName"
+          errorMessage="The displayName is invalid"
+        ></app-error-form-text>
+      </div>
+      <div class="flex flex-col gap-1">
+        <label for="email" class="text-sm font-medium">Email</label>
+        <input
+          pInputText
+          id="email"
+          type="email"
+          formControlName="email"
+          class="input"
+          placeholder="Enter your email"
+        />
+        <app-error-form-text
+          [formControlInp]="formGroup.controls.email"
+          errorKey="required"
+          errorMessage="Email field is required"
+        ></app-error-form-text>
+        <app-error-form-text
+          [formControlInp]="formGroup.controls.email"
+          errorKey="email"
+          errorMessage="The email is invalid"
+        ></app-error-form-text>
+      </div>
+      <div class="flex flex-col gap-1">
+        <label for="password" class="text-sm font-medium">Password</label>
+        <p-password
+          id="password"
+          formControlName="password"
+          [toggleMask]="true"
+          placeholder="Enter your password"
+          styleClass="w-full"
+          inputStyleClass="w-full"
+          [feedback]="false"
+        ></p-password>
+        <app-error-form-text
+          [formControlInp]="formGroup.controls.password"
+          errorKey="required"
+          errorMessage="Password field is required"
+        ></app-error-form-text>
+        <app-error-form-text
+          [formControlInp]="formGroup.controls.password"
+          errorKey="missingUppercase"
+          errorMessage="The password doesn't contain uppercase letter"
+        ></app-error-form-text>
+        <app-error-form-text
+          [formControlInp]="formGroup.controls.password"
+          errorKey="missingLowercase"
+          errorMessage="The password doesn't contain lowercase letter"
+        ></app-error-form-text>
+        <app-error-form-text
+          [formControlInp]="formGroup.controls.password"
+          errorKey="missingNumber"
+          errorMessage="The password doesn't contain number"
+        ></app-error-form-text>
+        <app-error-form-text
+          [formControlInp]="formGroup.controls.password"
+          errorKey="missingSpecial"
+          errorMessage="The password doesn't contain special character"
+        ></app-error-form-text>
+        <app-error-form-text
+          [formControlInp]="formGroup.controls.password"
+          errorKey="missingMinLength"
+          errorMessage="The password should be at least 8 characters"
+        ></app-error-form-text>
+      </div>
+      @if (errorMessage()) {
+      <app-error-text [errorMessage]="errorMessage()"></app-error-text>
+      }
+      <p-button
+        label="Sign up"
+        [loading]="loading()"
+        type="submit"
+        styleClass="w-full"
+      ></p-button>
+      <p class="text-center text-sm text-gray-500">
+        Have an account?
+        <a routerLink="../login" class="text-blue-500 hover:underline">Login</a>
+      </p>
+    </div>
+  </form>
+</div>

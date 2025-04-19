@@ -1,0 +1,3 @@
+@if (formControl().invalid && formControl().touched && formControl().errors?.[errorKey()]) {
+    <app-error-text [errorMessage]="errorMessage()"></app-error-text>
+}

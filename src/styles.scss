@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+@import "primeicons/primeicons.css";
+@import "./styles/index";
+
+@theme {
+  --font-poppins: "Poppins", sans-serif;
+  --color-primary: #D2B9A9;
+  --color-contrast: #A7BBA0;
+  --color-secondary: #E4C6B2;
+}

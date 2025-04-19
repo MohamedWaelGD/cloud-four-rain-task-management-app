@@ -1,0 +1,12 @@
+<div class="rounded-xl workspace-card shadow-inner shadow-black min-h-52 flex" style.background="url({{workspace().backgroundPath}})">
+  <p-menu #menu [model]="items" [popup]="true" />
+  <div class="backdrop-brightness-[0.7] p-4 rounded-xl grow">
+    <div class="flex flex-col gap-2">
+      <div class="flex justify-between relative">
+        <h2 class="text-xl font-bold text-white">{{ workspace().name }}</h2>
+        <p-button (click)="menu.toggle($event)" icon="pi pi-ellipsis-v"  severity="contrast" />
+      </div>
+      <p class="text-sm text-gray-200">{{ workspace().description | shortText:400 }}</p>
+    </div>
+  </div>
+</div>

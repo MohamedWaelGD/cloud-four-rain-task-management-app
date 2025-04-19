@@ -1,0 +1,35 @@
+<form
+  [formGroup]="formGroup"
+  (ngSubmit)="onSubmit()"
+  class="flex flex-col gap-2"
+>
+  <div class="flex flex-col">
+    <label>Workspace name</label>
+    <input pInputText formControlName="name" />
+    <app-error-form-text
+      [formControlInp]="formGroup.controls.name"
+      errorKey="required"
+      errorMessage="The name field is required"
+    ></app-error-form-text>
+  </div>
+  <div class="flex flex-col">
+    <label>Description</label>
+    <textarea pInputText formControlName="description"></textarea>
+  </div>
+  <p>Select background for workspace</p>
+  <div class="flex flex-wrap justify-center items-center gap-3">
+    @for (pic of pictures; track $index) {
+      <button (click)="selectPicture(pic)" type="button">
+        <img
+          [src]="pic"
+          [alt]="pic"
+          class="w-72 h-52 rounded-xl shadow-xl"
+          [ngClass]="{ 'border-3 border-green-500 shadow-2xl': selectedBackgroundPath == pic }"
+        />
+      </button>
+    }
+  </div>
+  <div class="flex justify-end">
+    <p-button label="Save" [loading]="loading()" type="submit"></p-button>
+  </div>
+</form>

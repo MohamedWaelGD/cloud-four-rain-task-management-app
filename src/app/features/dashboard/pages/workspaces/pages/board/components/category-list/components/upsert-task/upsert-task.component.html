@@ -1,0 +1,53 @@
+<form
+  [formGroup]="formGroup"
+  (ngSubmit)="onSubmit()"
+  class="d-flex flex-col gap-2"
+>
+  <div class="flex flex-col gap-1">
+    <label for="name">Task Name</label>
+    <input
+      pInputText
+      id="name"
+      formControlName="name"
+      type="text"
+      placeholder="Enter task name"
+    />
+    <app-error-form-text
+      [formControlInp]="formGroup.controls.name"
+      errorKey="required"
+      errorMessage="The name is required"
+    ></app-error-form-text>
+  </div>
+  <div class="flex flex-col gap-1">
+    <label for="description">Description</label>
+    <textarea
+      pInputText
+      id="description"
+      formControlName="description"
+      type="text"
+      placeholder="Enter task name"
+    ></textarea>
+  </div>
+  <div class="flex flex-col gap-1">
+    <label for="priority">Priority</label>
+    <p-select [options]="priorityItems" formControlName="priority" />
+    <app-error-form-text
+      [formControlInp]="formGroup.controls.priority"
+      errorKey="required"
+      errorMessage="The priority is required"
+    ></app-error-form-text>
+  </div>
+  <div class="flex flex-col gap-1">
+    <label for="dueDate">Due date</label>
+    <input
+      pInputText
+      id="dueDate"
+      formControlName="dueDate"
+      type="date"
+      placeholder="Enter due date"
+    />
+  </div>
+  <div class="flex justify-end mt-2">
+    <p-button label="Save" type="submit" [loading]="loading()"></p-button>
+  </div>
+</form>

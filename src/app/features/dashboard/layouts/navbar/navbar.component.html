@@ -1,0 +1,20 @@
+<div class="flex justify-between items-center px-4 py-2 bg-gray-300">
+  <div>
+    <span class="font-bold text-xl"
+      ><i class="pi pi-bookmark-fill text-blue-700"></i> Task Managements</span
+    >
+  </div>
+  <button class="flex items-center gap-2" (click)="menu.toggle($event)">
+    <div
+      class="h-8 w-8 rounded-full flex justify-center items-center text-white font-bold text-lg shadow-sm"
+      [ngStyle]="{ 'background-color': randomColor }"
+    >
+      {{ firstUserLetter() | uppercase }}
+    </div>
+    <p>{{ user()?.displayName }}</p>
+    <div class="flex">
+      <i class="pi pi-angle-down"></i>
+    </div>
+    <p-menu #menu [model]="items" [popup]="true" />
+  </button>
+</div>

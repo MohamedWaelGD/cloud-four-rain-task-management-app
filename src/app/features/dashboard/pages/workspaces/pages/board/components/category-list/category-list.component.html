@@ -1,0 +1,36 @@
+<div class="w-80 border border-stone-600 rounded-md p-2 flex flex-col gap-2 text-white" cdkDropList [cdkDropListData]="category().tasks" cdkDropList
+(cdkDropListDropped)="drop($event)" [attr.data-category]="category().uuid">
+  <div class="flex justify-between items-center gap-2 mb-2">
+    <div class="flex flex-col">
+      <h4 class="text-2xl font-bold">{{ category().name }}</h4>
+      @if (countedTasks()) {
+        <span class="text-sm text-gray-300 font-semibold">(Tasks {{ countedTasks() }})</span>
+      }
+    </div>
+    <p-menu #menu [model]="items" [popup]="true" />
+    <p-button (click)="menu.toggle($event)" [outlined]="false" icon="pi pi-ellipsis-v" severity="secondary"  />
+  </div>
+  <div class="flex flex-col gap-2">
+    @for (task of category().tasks; track $index) {
+      <app-task-card [categoryTask]="task"
+      (onEditTask)="selectedTask.set(task); updateTask.showModal();"
+      (onDeleteTask)="deleteTask(task)"
+      cdkDrag></app-task-card>
+    }
+  </div>
+  <app-modal #createTask header="Add Task">
+    <app-upsert-task
+      [workspace]="workspace()"
+      [category]="category()"
+      (onChange)="createTask.hideModal()"
+    ></app-upsert-task>
+  </app-modal>
+  <app-modal #updateTask header="Update Task">
+    <app-upsert-task
+      [workspace]="workspace()"
+      [category]="category()"
+      [updateTask]="selectedTask()"
+      (onChange)="updateTask.hideModal()"
+    ></app-upsert-task>
+  </app-modal>
+</div>
