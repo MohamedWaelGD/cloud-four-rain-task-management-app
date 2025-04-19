@@ -1,59 +1,71 @@
 # CloudFourRainTaskManagementApp
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.3.
+A responsive, task management application built with Angular and deployed on Vercel. This app allows users to create, manage, and track tasks efficiently, offering a user experience across devices.
 
-## Development server
+## 🌐 Live Demo
 
-To start a local development server, run:
+Experience the application live: [cloud-four-rain-task-management-app.vercel.app](https://cloud-four-rain-task-management-app.vercel.app)
+Video Url [Video Link](https://drive.google.com/file/d/1EQPGmpwZyniugV4u7LpluNHLcgCEmApN/view?usp=drive_link)
 
-```bash
-ng serve
-```
+## 🚀 Features
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- User-friendly interface for task creation and management
+- Responsive design compatible with various devices
+- Workspaces management
+- Real-time updates and task tracking
+- Efficient handling of edge cases to ensure robustness
 
-## Code scaffolding
+## 🛠️ Installation Steps
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+To set up the project locally, follow these steps:
 
-```bash
-ng generate component component-name
-```
+1. **Clone the Repository**
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+   ```bash
+   git clone https://github.com/MohamedWaelGD/cloud-four-rain-task-management-app.git
+   cd cloud-four-rain-task-management-app
+   ```
 
-```bash
-ng generate --help
-```
+2. **Install Dependencies**
 
-## Building
+   Ensure you have [Node.js](https://nodejs.org/) installed. Then, install the project dependencies:
 
-To build the project run:
+   ```bash
+   npm install --force
+   ```
 
-```bash
-ng build
-```
+3. **Run the Development Server**
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+   Start the Angular development server:
 
-## Running unit tests
+   ```bash
+   ng serve
+   ```
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+   Navigate to `http://localhost:4200/` in your browser to view the application. The app will automatically reload if you make changes to the source files.
 
-```bash
-ng test
-```
+## 🧪 Edge Cases Handled
 
-## Running end-to-end tests
+The application incorporates several checks and validations to handle potential edge cases, ensuring a smooth user experience:
 
-For end-to-end (e2e) testing, run:
+- **Empty Task Submission**: Prevents users from creating tasks without a title or description, prompting for necessary information.
+- **Task Deletion Confirmation**: Prompts users for confirmation before deleting a task to prevent accidental removals.
+- **Responsive Design**: Ensures the application layout adjusts appropriately across different screen sizes and devices.
+- **Error Handling**: Displays user-friendly error messages for unexpected issues, such as network errors or server unavailability.
 
-```bash
-ng e2e
-```
+## 📁 Project Structure
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+The project follows a standard Angular structure:
 
-## Additional Resources
+- `src/`
+  - `app/`
+    - `core/` - All services, components & classes in project
+    - `features/` - Main features and pages
+    - `shared/` - Reusable UI components
+    - `app.module.ts` - Main application module
+    - `app.component.ts` - Root component
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## 📦 Deployment
+
+The application is deployed on [Vercel](https://vercel.com/), leveraging its edge network for fast and reliable delivery. Vercel's infrastructure ensures optimal performance and scalability for the application.
+
