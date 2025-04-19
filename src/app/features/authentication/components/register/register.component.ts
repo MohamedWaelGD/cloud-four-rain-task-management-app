@@ -52,9 +52,9 @@ export class RegisterComponent {
         this.loading.set(false);
       })
       .catch((err: HttpErrorResponse) => {
-        if (err.error.message === 'EMAIL_EXISTS') {
+        if (err.error?.message === 'EMAIL_EXISTS') {
           this.errorMessage.set('Email already exists. Please use another one.');
-        } else if (err.error.message === 'INVALID_EMAIL') {
+        } else if (err.error?.message === 'INVALID_EMAIL') {
           this.errorMessage.set('Invalid email. Please enter a valid email address.');
         } else {
           this.errorMessage.set('Please enter valid info.');
