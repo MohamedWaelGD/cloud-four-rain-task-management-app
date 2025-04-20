@@ -15,6 +15,13 @@ Video Url [Video Link](https://drive.google.com/file/d/1EQPGmpwZyniugV4u7LpluNHL
 - Real-time updates and task tracking
 - Efficient handling of edge cases to ensure robustness
 
+## 📑 Technologies
+
+- Angular 19.2
+- Tailwind 4.1
+- PrimeNG 19
+- Firebase (Authentication, FireStore)
+
 ## 🛠️ Installation Steps
 
 To set up the project locally, follow these steps:
